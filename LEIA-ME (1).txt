@@ -1,0 +1,3 @@
+Coloque aqui as imagens da frente dos cartões:
+item-001.png até item-100.png.
+Consulte o arquivo MAPEAMENTO-ITENS.txt para saber qual item corresponde a cada número.

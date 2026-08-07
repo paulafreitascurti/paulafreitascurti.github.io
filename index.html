@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Presentes | Nosso Casamento</title>
+  <meta name="description" content="Lista de presentes de casamento">
+
+  <style>
+    :root {
+      --bg: #efeee6;
+      --bg-2: #f6f4ec;
+      --card: #ebe9de;
+      --card-inner: #f9f8f4;
+      --line: #ddd8ca;
+      --text: #494641;
+      --text-2: #6a655e;
+      --title: #2f2a24;
+      --olive: #a8a777;
+      --olive-dark: #91915f;
+      --shadow: 0 12px 30px rgba(73, 70, 65, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+      text-align: center;
+    }
+
+    .hero h1, .section-head h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--title);
+      letter-spacing: 0.2px;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4.7vw, 3.8rem);
+      font-weight: 600;
+    }
+
+    .hero p {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      line-height: 1.8;
+      color: var(--text-2);
+      font-size: 1.04rem;
+    }
+
+    .section {
+      padding: 22px 0 50px;
+    }
+
+    .section-head {
+      width: min(790px, 100%);
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3.1vw, 2.45rem);
+      font-weight: 600;
+    }
+
+    .section-head p {
+      margin: 0;
+      line-height: 1.75;
+      color: var(--text-2);
+      font-size: 1rem;
+    }
+
+    .pix-box {
+      width: min(430px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .pix-box__qr {
+      width: min(240px, 100%);
+      aspect-ratio: 1;
+      margin: 0 auto 16px;
+      border-radius: var(--radius-md);
+      background: white;
+      border: 1px solid #eee8dc;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .pix-box__qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    .pix-box__text {
+      margin: 0;
+      color: var(--text-2);
+      font-size: 0.95rem;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(249, 248, 244, 0.72);
+      box-shadow: 0 4px 14px rgba(73, 70, 65, 0.04);
+    }
+
+    .toolbar p {
+      margin: 0;
+      color: var(--text-2);
+      font-size: 0.97rem;
+    }
+
+    .toolbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar label {
+      font-weight: 700;
+      color: var(--title);
+    }
+
+    .toolbar select {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid #d3cbb9;
+      background: #fffefb;
+      color: var(--title);
+      cursor: pointer;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .gift-card {
+      display: block;
+      width: 100%;
+      min-height: 390px;
+      aspect-ratio: 0.83 / 1;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      perspective: 1200px;
+      text-align: inherit;
+    }
+
+    .gift-card:focus-visible {
+      outline: 3px solid #c5c08d;
+      outline-offset: 4px;
+      border-radius: var(--radius-lg);
+    }
+
+    .gift-card__inner {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.7s ease;
+    }
+
+    .gift-card.is-flipped .gift-card__inner {
+      transform: rotateY(180deg);
+    }
+
+    .gift-card__face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 18px 18px 20px;
+      border-radius: var(--radius-lg);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backface-visibility: hidden;
+    }
+
+    .gift-card__face--back {
+      transform: rotateY(180deg);
+    }
+
+    .media-box {
+      width: 100%;
+      background: var(--card-inner);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 190px;
+      margin-bottom: 18px;
+    }
+
+    .media-box img {
+      width: 100%;
+      height: 100%;
+      max-width: 220px;
+      max-height: 160px;
+      object-fit: contain;
+    }
+
+    .gift-category {
+      margin: 2px 0 0;
+      color: var(--olive-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .gift-title {
+      margin: 8px 0 0;
+      min-height: 48px;
+      text-align: center;
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .gift-price {
+      margin: 18px 0 0;
+      color: #3e3b36;
+      font-size: 1.12rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .gift-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 138px;
+      min-height: 50px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      background: var(--olive);
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .gift-card__face--back .media-box {
+      min-height: 220px;
+      background: white;
+      border: 1px solid #eee6d8;
+    }
+
+    .gift-card__face--back .media-box img {
+      max-width: 220px;
+      max-height: 220px;
+      object-fit: contain;
+    }
+
+    .qr-caption {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: var(--text-2);
+      text-align: center;
+    }
+
+    .img-fallback,
+    .qr-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
+      place-items: center;
+      text-align: center;
+      border-radius: 12px;
+      color: var(--text-2);
+      font-size: 0.85rem;
+      background: #ffffff;
+      border: 1px dashed #d7cebc;
+      padding: 12px;
+    }
+
+    .placeholder-visual {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ecebe7 0%, #f7f6f1 100%);
+    }
+
+    .placeholder-visual::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      width: 42%;
+      height: 22%;
+      transform: translateX(-50%);
+      background: #f4f4f1;
+      border-radius: 999px;
+      box-shadow:
+        -18px 10px 0 1px #f4f4f1,
+        20px 10px 0 -2px #f4f4f1;
+    }
+
+    .placeholder-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -6% -8%;
+      height: 42%;
+      background:
+        radial-gradient(120% 110% at 10% 10%, #cadb94 0 35%, transparent 36%),
+        radial-gradient(80% 80% at 55% 35%, #b4c77c 0 34%, transparent 35%),
+        linear-gradient(180deg, #b8cd82 0%, #a4bb66 50%, #94a953 100%);
+      border-radius: 55% 45% 0 0 / 70% 70% 0 0;
+    }
+
+    .footer {
+      padding: 8px 0 48px;
+      text-align: center;
+      color: var(--text-2);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gift-card {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .toolbar-controls {
+        justify-content: space-between;
+      }
+
+      .toolbar select {
+        flex: 1;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gift-card {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gift-card__inner {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Nome do casal</h1>
+      <p>
+        A sua presença em nosso casamento já é um presente muito especial.
+        Para quem desejar contribuir com o início desta nova etapa, preparamos
+        esta lista com carinho.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="pix-livre-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="pix-livre-title">Pix com valor livre</h2>
+          <p>
+            Caso não tenha encontrado nada que gostaria de nos presentear,
+            você também pode enviar um valor livre via Pix.
+          </p>
+        </div>
+
+        <div class="pix-box">
+          <div class="pix-box__qr">
+            <img src="qrcodes/pix-livre.png" alt="QR Code do Pix com valor livre" onerror="showQrFallback(this)">
+            <div class="qr-fallback">Coloque aqui o arquivo <strong>qrcodes/pix-livre.png</strong></div>
+          </div>
+          <p class="pix-box__text">Escaneie o QR Code com o aplicativo do seu banco.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="lista-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="lista-title">Lista de presentes</h2>
+          <p>
+            Cada cartão mostra a imagem, o nome e o valor do presente.
+            Ao clicar, ele gira e exibe o QR Code correspondente.
+          </p>
+        </div>
+
+        <div class="toolbar">
+          <p id="gift-count">100 presentes disponíveis</p>
+
+          <div class="toolbar-controls">
+            <label for="sort">Ordenar por</label>
+            <select id="sort">
+              <option value="original">Ordem original</option>
+              <option value="az">Nome: A–Z</option>
+              <option value="za">Nome: Z–A</option>
+              <option value="cheap">Menor preço</option>
+              <option value="expensive">Maior preço</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid" id="gift-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Com carinho, Nome do casal.</div>
+  </footer>
+
+  <script>
+    const presentes = [
+      { id: 1, categoria: "Área externa", nome: "Tábua de passar roupa", valor: 164.00, imagem: "imagens/item-001.png", qr: "qrcodes/item-001.png" },
+      { id: 2, categoria: "Área externa", nome: "Kit para churrasco", valor: 289.19, imagem: "imagens/item-002.png", qr: "qrcodes/item-002.png" },
+      { id: 3, categoria: "Área externa", nome: "Cota 1 Paredinha escalada", valor: 752.18, imagem: "imagens/item-003.png", qr: "qrcodes/item-003.png" },
+      { id: 4, categoria: "Área externa", nome: "Cota 2 Paredinha escalada", valor: 752.18, imagem: "imagens/item-004.png", qr: "qrcodes/item-004.png" },
+      { id: 5, categoria: "Área externa", nome: "Cota Pedra da pia externa", valor: 820.99, imagem: "imagens/item-005.png", qr: "qrcodes/item-005.png" },
+      { id: 6, categoria: "Área externa", nome: "Cadeiras área externa (4)", valor: 859.16, imagem: "imagens/item-006.png", qr: "qrcodes/item-006.png" },
+      { id: 7, categoria: "Área externa", nome: "Cota Mesa área externa em alumínio e madeira", valor: 908.99, imagem: "imagens/item-007.png", qr: "qrcodes/item-007.png" },
+      { id: 8, categoria: "Banheiro", nome: "Chuveiro", valor: 150.00, imagem: "imagens/item-008.png", qr: "qrcodes/item-008.png" },
+      { id: 9, categoria: "Banheiro", nome: "Cota Gabinete do banheiro", valor: 343.32, imagem: "imagens/item-009.png", qr: "qrcodes/item-009.png" },
+      { id: 10, categoria: "Cozinha", nome: "Jogo de Taça Água e Vinho Bohemia Gastro", valor: 130.00, imagem: "imagens/item-010.png", qr: "qrcodes/item-010.png" },
+      { id: 11, categoria: "Cozinha", nome: "Cota armários da cozinha", valor: 150.00, imagem: "imagens/item-011.png", qr: "qrcodes/item-011.png" },
+      { id: 12, categoria: "Cozinha", nome: "Faqueiro INox 36 peças tramontina", valor: 176.00, imagem: "imagens/item-012.png", qr: "qrcodes/item-012.png" },
+      { id: 13, categoria: "Cozinha", nome: "Jogo de 6 bowls PortoBrasil Biolatte", valor: 189.21, imagem: "imagens/item-013.png", qr: "qrcodes/item-013.png" },
+      { id: 14, categoria: "Cozinha", nome: "Abridor de vinho elétrico Oster", valor: 260.00, imagem: "imagens/item-014.png", qr: "qrcodes/item-014.png" },
+      { id: 15, categoria: "Cozinha", nome: "Cota armários da cozinha", valor: 300.00, imagem: "imagens/item-015.png", qr: "qrcodes/item-015.png" },
+      { id: 16, categoria: "Cozinha", nome: "Purificador de água Eletrolux", valor: 389.90, imagem: "imagens/item-016.png", qr: "qrcodes/item-016.png" },
+      { id: 17, categoria: "Cozinha", nome: "Jogo de panelas cerâmica Brinox", valor: 449.99, imagem: "imagens/item-017.png", qr: "qrcodes/item-017.png" },
+      { id: 18, categoria: "Cozinha", nome: "Cota armários da cozinha", valor: 500.00, imagem: "imagens/item-018.png", qr: "qrcodes/item-018.png" },
+      { id: 19, categoria: "Cozinha", nome: "Cota armários da cozinha", valor: 650.00, imagem: "imagens/item-019.png", qr: "qrcodes/item-019.png" },
+      { id: 20, categoria: "Cozinha", nome: "Cota armários da cozinha", valor: 800.00, imagem: "imagens/item-020.png", qr: "qrcodes/item-020.png" },
+      { id: 21, categoria: "Cozinha", nome: "Aparelho de jantar 30 peças PortoBrasil Biolatte", valor: 1169.90, imagem: "imagens/item-021.png", qr: "qrcodes/item-021.png" },
+      { id: 22, categoria: "Eletrodomésticos", nome: "Sanduicheira Grill Britânia", valor: 129.00, imagem: "imagens/item-022.png", qr: "qrcodes/item-022.png" },
+      { id: 23, categoria: "Eletrodomésticos", nome: "Ferro de passar a vapor e a seco Eletrolux", valor: 229.00, imagem: "imagens/item-023.png", qr: "qrcodes/item-023.png" },
+      { id: 24, categoria: "Eletrodomésticos", nome: "Mixer Multifuncional 3 em 1 Black Oster", valor: 249.90, imagem: "imagens/item-024.png", qr: "qrcodes/item-024.png" },
+      { id: 25, categoria: "Eletrodomésticos", nome: "Aspirador de pó Vertical Oster Stick", valor: 339.90, imagem: "imagens/item-025.png", qr: "qrcodes/item-025.png" },
+      { id: 26, categoria: "Eletrodomésticos", nome: "Tanquinho 10kg", valor: 502.55, imagem: "imagens/item-026.png", qr: "qrcodes/item-026.png" },
+      { id: 27, categoria: "Eletrodomésticos", nome: "Micro-ondas", valor: 529.00, imagem: "imagens/item-027.png", qr: "qrcodes/item-027.png" },
+      { id: 28, categoria: "Eletrodomésticos", nome: "Multiprocessador Liquidificador de Alimentos Black 7 em 1 Oster", valor: 649.90, imagem: "imagens/item-028.png", qr: "qrcodes/item-028.png" },
+      { id: 29, categoria: "Eletrodomésticos", nome: "Cota geladeira", valor: 860.00, imagem: "imagens/item-029.png", qr: "qrcodes/item-029.png" },
+      { id: 30, categoria: "Eletrodomésticos", nome: "Cota Máquina de lavar", valor: 944.50, imagem: "imagens/item-030.png", qr: "qrcodes/item-030.png" },
+      { id: 31, categoria: "Eletrodomésticos", nome: "Cota lava-louças", valor: 1069.95, imagem: "imagens/item-031.png", qr: "qrcodes/item-031.png" },
+      { id: 32, categoria: "Iluminação", nome: "Para iluminar a nossa casa", valor: 154.50, imagem: "imagens/item-032.png", qr: "qrcodes/item-032.png" },
+      { id: 33, categoria: "Lua de mel", nome: "Caixinha Lua de mel", valor: 150.00, imagem: "imagens/item-033.png", qr: "qrcodes/item-033.png" },
+      { id: 34, categoria: "Lua de mel", nome: "Caixinha Lua de mel", valor: 300.00, imagem: "imagens/item-034.png", qr: "qrcodes/item-034.png" },
+      { id: 35, categoria: "Lua de mel", nome: "Caixinha Lua de mel", valor: 500.00, imagem: "imagens/item-035.png", qr: "qrcodes/item-035.png" },
+      { id: 36, categoria: "Lua de mel", nome: "Caixinha Lua de mel", valor: 1000.00, imagem: "imagens/item-036.png", qr: "qrcodes/item-036.png" },
+      { id: 37, categoria: "Obra", nome: "Cota saco de cimento", valor: 150.00, imagem: "imagens/item-037.png", qr: "qrcodes/item-037.png" },
+      { id: 38, categoria: "Obra", nome: "Cota tijolos", valor: 150.00, imagem: "imagens/item-038.png", qr: "qrcodes/item-038.png" },
+      { id: 39, categoria: "Obra", nome: "Cota “um pedacinho do nosso teto” (telhas)", valor: 150.00, imagem: "imagens/item-039.png", qr: "qrcodes/item-039.png" },
+      { id: 40, categoria: "Obra", nome: "Tinta - Cota “paredes com cara de casa”", valor: 150.00, imagem: "imagens/item-040.png", qr: "qrcodes/item-040.png" },
+      { id: 41, categoria: "Obra", nome: "Cota “primeiros passos na casa nova” - revestimento", valor: 150.00, imagem: "imagens/item-041.png", qr: "qrcodes/item-041.png" },
+      { id: 42, categoria: "Obra", nome: "Vale caçamba", valor: 200.00, imagem: "imagens/item-042.png", qr: "qrcodes/item-042.png" },
+      { id: 43, categoria: "Obra", nome: "Cota saco de cimento", valor: 300.00, imagem: "imagens/item-043.png", qr: "qrcodes/item-043.png" },
+      { id: 44, categoria: "Obra", nome: "Cota tijolos", valor: 300.00, imagem: "imagens/item-044.png", qr: "qrcodes/item-044.png" },
+      { id: 45, categoria: "Obra", nome: "Cota “um pedacinho do nosso teto” (telhas)", valor: 300.00, imagem: "imagens/item-045.png", qr: "qrcodes/item-045.png" },
+      { id: 46, categoria: "Obra", nome: "Tinta - Cota “paredes com cara de casa”", valor: 300.00, imagem: "imagens/item-046.png", qr: "qrcodes/item-046.png" },
+      { id: 47, categoria: "Obra", nome: "Cota “primeiros passos na casa nova” - revestimento", valor: 300.00, imagem: "imagens/item-047.png", qr: "qrcodes/item-047.png" },
+      { id: 48, categoria: "Obra", nome: "Cota sacos de cimento", valor: 500.00, imagem: "imagens/item-048.png", qr: "qrcodes/item-048.png" },
+      { id: 49, categoria: "Obra", nome: "Cota tijolos", valor: 500.00, imagem: "imagens/item-049.png", qr: "qrcodes/item-049.png" },
+      { id: 50, categoria: "Obra", nome: "Cota “um pedacinho do nosso teto” (telhas)", valor: 500.00, imagem: "imagens/item-050.png", qr: "qrcodes/item-050.png" },
+      { id: 51, categoria: "Obra", nome: "Tinta - Cota “paredes com cara de casa”", valor: 500.00, imagem: "imagens/item-051.png", qr: "qrcodes/item-051.png" },
+      { id: 52, categoria: "Obra", nome: "Cota “primeiros passos na casa nova” - revestimento", valor: 500.00, imagem: "imagens/item-052.png", qr: "qrcodes/item-052.png" },
+      { id: 53, categoria: "Obra", nome: "Cota sacos de cimento", valor: 650.00, imagem: "imagens/item-053.png", qr: "qrcodes/item-053.png" },
+      { id: 54, categoria: "Obra", nome: "Cota tijolos", valor: 650.00, imagem: "imagens/item-054.png", qr: "qrcodes/item-054.png" },
+      { id: 55, categoria: "Obra", nome: "Cota “um pedacinho do nosso teto” (telhas)", valor: 650.00, imagem: "imagens/item-055.png", qr: "qrcodes/item-055.png" },
+      { id: 56, categoria: "Obra", nome: "Tinta - Cota “paredes com cara de casa”", valor: 650.00, imagem: "imagens/item-056.png", qr: "qrcodes/item-056.png" },
+      { id: 57, categoria: "Obra", nome: "Cota “primeiros passos na casa nova” - revestimento", valor: 650.00, imagem: "imagens/item-057.png", qr: "qrcodes/item-057.png" },
+      { id: 58, categoria: "Obra", nome: "Cota sacos de cimento", valor: 800.00, imagem: "imagens/item-058.png", qr: "qrcodes/item-058.png" },
+      { id: 59, categoria: "Obra", nome: "Cota tijolos", valor: 800.00, imagem: "imagens/item-059.png", qr: "qrcodes/item-059.png" },
+      { id: 60, categoria: "Obra", nome: "Cota “um pedacinho do nosso teto” (telhas)", valor: 800.00, imagem: "imagens/item-060.png", qr: "qrcodes/item-060.png" },
+      { id: 61, categoria: "Obra", nome: "Tinta - Cota “paredes com cara de casa”", valor: 800.00, imagem: "imagens/item-061.png", qr: "qrcodes/item-061.png" },
+      { id: 62, categoria: "Obra", nome: "Cota “primeiros passos na casa nova” - revestimento", valor: 800.00, imagem: "imagens/item-062.png", qr: "qrcodes/item-062.png" },
+      { id: 63, categoria: "Quartos e enxoval", nome: "Colcha Piquet Queen Teka", valor: 149.98, imagem: "imagens/item-063.png", qr: "qrcodes/item-063.png" },
+      { id: 64, categoria: "Quartos e enxoval", nome: "Cota guarda-roupa do casal", valor: 150.00, imagem: "imagens/item-064.png", qr: "qrcodes/item-064.png" },
+      { id: 65, categoria: "Quartos e enxoval", nome: "Jogo de lençol queen", valor: 160.00, imagem: "imagens/item-065.png", qr: "qrcodes/item-065.png" },
+      { id: 66, categoria: "Quartos e enxoval", nome: "Edredom queen", valor: 255.90, imagem: "imagens/item-066.png", qr: "qrcodes/item-066.png" },
+      { id: 67, categoria: "Quartos e enxoval", nome: "Jogo de toalhas", valor: 289.90, imagem: "imagens/item-067.png", qr: "qrcodes/item-067.png" },
+      { id: 68, categoria: "Quartos e enxoval", nome: "Cota guarda-roupa do casal", valor: 300.00, imagem: "imagens/item-068.png", qr: "qrcodes/item-068.png" },
+      { id: 69, categoria: "Quartos e enxoval", nome: "Cortina Blakout", valor: 345.54, imagem: "imagens/item-069.png", qr: "qrcodes/item-069.png" },
+      { id: 70, categoria: "Quartos e enxoval", nome: "Cota cabeceira de cama queen", valor: 348.15, imagem: "imagens/item-070.png", qr: "qrcodes/item-070.png" },
+      { id: 71, categoria: "Quartos e enxoval", nome: "Jogo de Cama Queen 200 fios", valor: 369.90, imagem: "imagens/item-071.png", qr: "qrcodes/item-071.png" },
+      { id: 72, categoria: "Quartos e enxoval", nome: "Cota guarda-roupa do casal", valor: 500.00, imagem: "imagens/item-072.png", qr: "qrcodes/item-072.png" },
+      { id: 73, categoria: "Quartos e enxoval", nome: "Cota guarda-roupa do casal", valor: 650.00, imagem: "imagens/item-073.png", qr: "qrcodes/item-073.png" },
+      { id: 74, categoria: "Quartos e enxoval", nome: "Cota guarda-roupa do casal", valor: 800.00, imagem: "imagens/item-074.png", qr: "qrcodes/item-074.png" },
+      { id: 75, categoria: "Sala e decoração", nome: "Almofadas decorativas", valor: 149.90, imagem: "imagens/item-075.png", qr: "qrcodes/item-075.png" },
+      { id: 76, categoria: "Sala e decoração", nome: "Manta para sofá", valor: 179.90, imagem: "imagens/item-076.png", qr: "qrcodes/item-076.png" },
+      { id: 77, categoria: "Sala e decoração", nome: "Tapete para sala", valor: 699.90, imagem: "imagens/item-077.png", qr: "qrcodes/item-077.png" },
+      { id: 78, categoria: "Sala e decoração", nome: "Espelho decorativo", valor: 349.90, imagem: "imagens/item-078.png", qr: "qrcodes/item-078.png" },
+      { id: 79, categoria: "Sala e decoração", nome: "Quadro para sala", valor: 189.90, imagem: "imagens/item-079.png", qr: "qrcodes/item-079.png" },
+      { id: 80, categoria: "Sala e decoração", nome: "Mesa lateral", valor: 329.90, imagem: "imagens/item-080.png", qr: "qrcodes/item-080.png" },
+      { id: 81, categoria: "Sala e decoração", nome: "Luminária de piso", valor: 459.90, imagem: "imagens/item-081.png", qr: "qrcodes/item-081.png" },
+      { id: 82, categoria: "Sala e decoração", nome: "Cota sofá da sala", valor: 300.00, imagem: "imagens/item-082.png", qr: "qrcodes/item-082.png" },
+      { id: 83, categoria: "Sala e decoração", nome: "Cota sofá da sala", valor: 500.00, imagem: "imagens/item-083.png", qr: "qrcodes/item-083.png" },
+      { id: 84, categoria: "Sala e decoração", nome: "Cota sofá da sala", valor: 800.00, imagem: "imagens/item-084.png", qr: "qrcodes/item-084.png" },
+      { id: 85, categoria: "Banheiro", nome: "Jogo de acessórios para banheiro", valor: 159.90, imagem: "imagens/item-085.png", qr: "qrcodes/item-085.png" },
+      { id: 86, categoria: "Banheiro", nome: "Espelho para banheiro", valor: 299.90, imagem: "imagens/item-086.png", qr: "qrcodes/item-086.png" },
+      { id: 87, categoria: "Banheiro", nome: "Kit de toalhas de banho", valor: 239.90, imagem: "imagens/item-087.png", qr: "qrcodes/item-087.png" },
+      { id: 88, categoria: "Cozinha", nome: "Jogo de potes herméticos", valor: 169.90, imagem: "imagens/item-088.png", qr: "qrcodes/item-088.png" },
+      { id: 89, categoria: "Cozinha", nome: "Tábua de corte em madeira", valor: 139.90, imagem: "imagens/item-089.png", qr: "qrcodes/item-089.png" },
+      { id: 90, categoria: "Cozinha", nome: "Assadeira antiaderente", valor: 179.90, imagem: "imagens/item-090.png", qr: "qrcodes/item-090.png" },
+      { id: 91, categoria: "Cozinha", nome: "Cafeteira elétrica", valor: 219.90, imagem: "imagens/item-091.png", qr: "qrcodes/item-091.png" },
+      { id: 92, categoria: "Cozinha", nome: "Chaleira elétrica", valor: 199.90, imagem: "imagens/item-092.png", qr: "qrcodes/item-092.png" },
+      { id: 93, categoria: "Área externa", nome: "Varal de chão", valor: 189.90, imagem: "imagens/item-093.png", qr: "qrcodes/item-093.png" },
+      { id: 94, categoria: "Área externa", nome: "Mangueira de jardim", valor: 169.90, imagem: "imagens/item-094.png", qr: "qrcodes/item-094.png" },
+      { id: 95, categoria: "Área externa", nome: "Vaso para área externa", valor: 249.90, imagem: "imagens/item-095.png", qr: "qrcodes/item-095.png" },
+      { id: 96, categoria: "Área externa", nome: "Banco para jardim", valor: 499.90, imagem: "imagens/item-096.png", qr: "qrcodes/item-096.png" },
+      { id: 97, categoria: "Quartos e enxoval", nome: "Par de travesseiros", valor: 189.90, imagem: "imagens/item-097.png", qr: "qrcodes/item-097.png" },
+      { id: 98, categoria: "Quartos e enxoval", nome: "Protetor de colchão queen", valor: 199.90, imagem: "imagens/item-098.png", qr: "qrcodes/item-098.png" },
+      { id: 99, categoria: "Quartos e enxoval", nome: "Abajures para o quarto", valor: 279.90, imagem: "imagens/item-099.png", qr: "qrcodes/item-099.png" },
+      { id: 100, categoria: "Organização", nome: "Kit de cabides", valor: 119.90, imagem: "imagens/item-100.png", qr: "qrcodes/item-100.png" }
+    ];
+
+    const giftGrid = document.getElementById("gift-grid");
+    const sortSelect = document.getElementById("sort");
+    const money = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+
+    function normalizeText(text) {
+      return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    function showQrFallback(img) {
+      img.style.display = "none";
+      const fb = img.nextElementSibling;
+      if (fb) fb.style.display = "grid";
+    }
+
+    function imageFallback(img) {
+      img.style.display = "none";
+      const placeholder = img.nextElementSibling;
+      if (placeholder) placeholder.style.display = "block";
+    }
+
+    function createCard(item) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "gift-card";
+      btn.setAttribute("aria-label", `${item.categoria}: ${item.nome} por ${money.format(item.valor)}. Clique para ver o QR Code.`);
+      btn.setAttribute("aria-pressed", "false");
+
+      btn.innerHTML = `
+        <span class="gift-card__inner">
+          <span class="gift-card__face gift-card__face--front">
+            <span class="media-box">
+              <img src="${item.imagem}" alt="Imagem ilustrativa de ${item.nome}" onerror="imageFallback(this)">
+              <span class="placeholder-visual"></span>
+            </span>
+
+            <span class="gift-category">${item.categoria}</span>
+            <span class="gift-title">${item.nome}</span>
+            <span class="gift-price">${money.format(item.valor)}</span>
+            <span class="gift-cta">Ver QR Code</span>
+          </span>
+
+          <span class="gift-card__face gift-card__face--back">
+            <span class="media-box">
+              <img src="${item.qr}" alt="QR Code do presente ${item.nome}" onerror="showQrFallback(this)">
+              <span class="qr-fallback">Adicione o arquivo <strong>${item.qr}</strong></span>
+            </span>
+
+            <span class="gift-category">${item.categoria}</span>
+            <span class="gift-title">${item.nome}</span>
+            <span class="gift-price">${money.format(item.valor)}</span>
+            <span class="gift-cta">Clique para voltar</span>
+          </span>
+        </span>
+      `;
+
+      btn.addEventListener("click", () => {
+        const flipped = btn.classList.toggle("is-flipped");
+        btn.setAttribute("aria-pressed", String(flipped));
+      });
+
+      return btn;
+    }
+
+    function render(list) {
+      giftGrid.replaceChildren();
+      const fragment = document.createDocumentFragment();
+      list.forEach(item => fragment.appendChild(createCard(item)));
+      giftGrid.appendChild(fragment);
+    }
+
+    function sortItems(mode) {
+      const arr = [...presentes];
+      switch (mode) {
+        case "az":
+          arr.sort((a, b) => normalizeText(a.nome).localeCompare(normalizeText(b.nome), "pt-BR"));
+          break;
+        case "za":
+          arr.sort((a, b) => normalizeText(b.nome).localeCompare(normalizeText(a.nome), "pt-BR"));
+          break;
+        case "cheap":
+          arr.sort((a, b) => a.valor - b.valor);
+          break;
+        case "expensive":
+          arr.sort((a, b) => b.valor - a.valor);
+          break;
+        default:
+          arr.sort((a, b) => a.id - b.id);
+      }
+      render(arr);
+    }
+
+    sortSelect.addEventListener("change", (e) => sortItems(e.target.value));
+    render(presentes);
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+MAPEAMENTO DOS 100 ITENS
+
+Os 74 primeiros itens vieram da lista informada, após a remoção de duplicatas exatas.
+Os 26 últimos foram adicionados para completar 100 itens.
+
+001 | Área externa | Tábua de passar roupa | R$ 164,00 | imagem: imagens/item-001.png | QR: qrcodes/item-001.png | LISTA INFORMADA
+002 | Área externa | Kit para churrasco | R$ 289,19 | imagem: imagens/item-002.png | QR: qrcodes/item-002.png | LISTA INFORMADA
+003 | Área externa | Cota 1 Paredinha escalada | R$ 752,18 | imagem: imagens/item-003.png | QR: qrcodes/item-003.png | LISTA INFORMADA
+004 | Área externa | Cota 2 Paredinha escalada | R$ 752,18 | imagem: imagens/item-004.png | QR: qrcodes/item-004.png | LISTA INFORMADA
+005 | Área externa | Cota Pedra da pia externa | R$ 820,99 | imagem: imagens/item-005.png | QR: qrcodes/item-005.png | LISTA INFORMADA
+006 | Área externa | Cadeiras área externa (4) | R$ 859,16 | imagem: imagens/item-006.png | QR: qrcodes/item-006.png | LISTA INFORMADA
+007 | Área externa | Cota Mesa área externa em alumínio e madeira | R$ 908,99 | imagem: imagens/item-007.png | QR: qrcodes/item-007.png | LISTA INFORMADA
+008 | Banheiro | Chuveiro | R$ 150,00 | imagem: imagens/item-008.png | QR: qrcodes/item-008.png | LISTA INFORMADA
+009 | Banheiro | Cota Gabinete do banheiro | R$ 343,32 | imagem: imagens/item-009.png | QR: qrcodes/item-009.png | LISTA INFORMADA
+010 | Cozinha | Jogo de Taça Água e Vinho Bohemia Gastro | R$ 130,00 | imagem: imagens/item-010.png | QR: qrcodes/item-010.png | LISTA INFORMADA
+011 | Cozinha | Cota armários da cozinha | R$ 150,00 | imagem: imagens/item-011.png | QR: qrcodes/item-011.png | LISTA INFORMADA
+012 | Cozinha | Faqueiro INox 36 peças tramontina | R$ 176,00 | imagem: imagens/item-012.png | QR: qrcodes/item-012.png | LISTA INFORMADA
+013 | Cozinha | Jogo de 6 bowls PortoBrasil Biolatte | R$ 189,21 | imagem: imagens/item-013.png | QR: qrcodes/item-013.png | LISTA INFORMADA
+014 | Cozinha | Abridor de vinho elétrico Oster | R$ 260,00 | imagem: imagens/item-014.png | QR: qrcodes/item-014.png | LISTA INFORMADA
+015 | Cozinha | Cota armários da cozinha | R$ 300,00 | imagem: imagens/item-015.png | QR: qrcodes/item-015.png | LISTA INFORMADA
+016 | Cozinha | Purificador de água Eletrolux | R$ 389,90 | imagem: imagens/item-016.png | QR: qrcodes/item-016.png | LISTA INFORMADA
+017 | Cozinha | Jogo de panelas cerâmica Brinox | R$ 449,99 | imagem: imagens/item-017.png | QR: qrcodes/item-017.png | LISTA INFORMADA
+018 | Cozinha | Cota armários da cozinha | R$ 500,00 | imagem: imagens/item-018.png | QR: qrcodes/item-018.png | LISTA INFORMADA
+019 | Cozinha | Cota armários da cozinha | R$ 650,00 | imagem: imagens/item-019.png | QR: qrcodes/item-019.png | LISTA INFORMADA
+020 | Cozinha | Cota armários da cozinha | R$ 800,00 | imagem: imagens/item-020.png | QR: qrcodes/item-020.png | LISTA INFORMADA
+021 | Cozinha | Aparelho de jantar 30 peças PortoBrasil Biolatte | R$ 1.169,90 | imagem: imagens/item-021.png | QR: qrcodes/item-021.png | LISTA INFORMADA
+022 | Eletrodomésticos | Sanduicheira Grill Britânia | R$ 129,00 | imagem: imagens/item-022.png | QR: qrcodes/item-022.png | LISTA INFORMADA
+023 | Eletrodomésticos | Ferro de passar a vapor e a seco Eletrolux | R$ 229,00 | imagem: imagens/item-023.png | QR: qrcodes/item-023.png | LISTA INFORMADA
+024 | Eletrodomésticos | Mixer Multifuncional 3 em 1 Black Oster | R$ 249,90 | imagem: imagens/item-024.png | QR: qrcodes/item-024.png | LISTA INFORMADA
+025 | Eletrodomésticos | Aspirador de pó Vertical Oster Stick | R$ 339,90 | imagem: imagens/item-025.png | QR: qrcodes/item-025.png | LISTA INFORMADA
+026 | Eletrodomésticos | Tanquinho 10kg | R$ 502,55 | imagem: imagens/item-026.png | QR: qrcodes/item-026.png | LISTA INFORMADA
+027 | Eletrodomésticos | Micro-ondas | R$ 529,00 | imagem: imagens/item-027.png | QR: qrcodes/item-027.png | LISTA INFORMADA
+028 | Eletrodomésticos | Multiprocessador Liquidificador de Alimentos Black 7 em 1 Oster | R$ 649,90 | imagem: imagens/item-028.png | QR: qrcodes/item-028.png | LISTA INFORMADA
+029 | Eletrodomésticos | Cota geladeira | R$ 860,00 | imagem: imagens/item-029.png | QR: qrcodes/item-029.png | LISTA INFORMADA
+030 | Eletrodomésticos | Cota Máquina de lavar | R$ 944,50 | imagem: imagens/item-030.png | QR: qrcodes/item-030.png | LISTA INFORMADA
+031 | Eletrodomésticos | Cota lava-louças | R$ 1.069,95 | imagem: imagens/item-031.png | QR: qrcodes/item-031.png | LISTA INFORMADA
+032 | Iluminação | Para iluminar a nossa casa | R$ 154,50 | imagem: imagens/item-032.png | QR: qrcodes/item-032.png | LISTA INFORMADA
+033 | Lua de mel | Caixinha Lua de mel | R$ 150,00 | imagem: imagens/item-033.png | QR: qrcodes/item-033.png | LISTA INFORMADA
+034 | Lua de mel | Caixinha Lua de mel | R$ 300,00 | imagem: imagens/item-034.png | QR: qrcodes/item-034.png | LISTA INFORMADA
+035 | Lua de mel | Caixinha Lua de mel | R$ 500,00 | imagem: imagens/item-035.png | QR: qrcodes/item-035.png | LISTA INFORMADA
+036 | Lua de mel | Caixinha Lua de mel | R$ 1.000,00 | imagem: imagens/item-036.png | QR: qrcodes/item-036.png | LISTA INFORMADA
+037 | Obra | Cota saco de cimento | R$ 150,00 | imagem: imagens/item-037.png | QR: qrcodes/item-037.png | LISTA INFORMADA
+038 | Obra | Cota tijolos | R$ 150,00 | imagem: imagens/item-038.png | QR: qrcodes/item-038.png | LISTA INFORMADA
+039 | Obra | Cota “um pedacinho do nosso teto” (telhas) | R$ 150,00 | imagem: imagens/item-039.png | QR: qrcodes/item-039.png | LISTA INFORMADA
+040 | Obra | Tinta - Cota “paredes com cara de casa” | R$ 150,00 | imagem: imagens/item-040.png | QR: qrcodes/item-040.png | LISTA INFORMADA
+041 | Obra | Cota “primeiros passos na casa nova” - revestimento | R$ 150,00 | imagem: imagens/item-041.png | QR: qrcodes/item-041.png | LISTA INFORMADA
+042 | Obra | Vale caçamba | R$ 200,00 | imagem: imagens/item-042.png | QR: qrcodes/item-042.png | LISTA INFORMADA
+043 | Obra | Cota saco de cimento | R$ 300,00 | imagem: imagens/item-043.png | QR: qrcodes/item-043.png | LISTA INFORMADA
+044 | Obra | Cota tijolos | R$ 300,00 | imagem: imagens/item-044.png | QR: qrcodes/item-044.png | LISTA INFORMADA
+045 | Obra | Cota “um pedacinho do nosso teto” (telhas) | R$ 300,00 | imagem: imagens/item-045.png | QR: qrcodes/item-045.png | LISTA INFORMADA
+046 | Obra | Tinta - Cota “paredes com cara de casa” | R$ 300,00 | imagem: imagens/item-046.png | QR: qrcodes/item-046.png | LISTA INFORMADA
+047 | Obra | Cota “primeiros passos na casa nova” - revestimento | R$ 300,00 | imagem: imagens/item-047.png | QR: qrcodes/item-047.png | LISTA INFORMADA
+048 | Obra | Cota sacos de cimento | R$ 500,00 | imagem: imagens/item-048.png | QR: qrcodes/item-048.png | LISTA INFORMADA
+049 | Obra | Cota tijolos | R$ 500,00 | imagem: imagens/item-049.png | QR: qrcodes/item-049.png | LISTA INFORMADA
+050 | Obra | Cota “um pedacinho do nosso teto” (telhas) | R$ 500,00 | imagem: imagens/item-050.png | QR: qrcodes/item-050.png | LISTA INFORMADA
+051 | Obra | Tinta - Cota “paredes com cara de casa” | R$ 500,00 | imagem: imagens/item-051.png | QR: qrcodes/item-051.png | LISTA INFORMADA
+052 | Obra | Cota “primeiros passos na casa nova” - revestimento | R$ 500,00 | imagem: imagens/item-052.png | QR: qrcodes/item-052.png | LISTA INFORMADA
+053 | Obra | Cota sacos de cimento | R$ 650,00 | imagem: imagens/item-053.png | QR: qrcodes/item-053.png | LISTA INFORMADA
+054 | Obra | Cota tijolos | R$ 650,00 | imagem: imagens/item-054.png | QR: qrcodes/item-054.png | LISTA INFORMADA
+055 | Obra | Cota “um pedacinho do nosso teto” (telhas) | R$ 650,00 | imagem: imagens/item-055.png | QR: qrcodes/item-055.png | LISTA INFORMADA
+056 | Obra | Tinta - Cota “paredes com cara de casa” | R$ 650,00 | imagem: imagens/item-056.png | QR: qrcodes/item-056.png | LISTA INFORMADA
+057 | Obra | Cota “primeiros passos na casa nova” - revestimento | R$ 650,00 | imagem: imagens/item-057.png | QR: qrcodes/item-057.png | LISTA INFORMADA
+058 | Obra | Cota sacos de cimento | R$ 800,00 | imagem: imagens/item-058.png | QR: qrcodes/item-058.png | LISTA INFORMADA
+059 | Obra | Cota tijolos | R$ 800,00 | imagem: imagens/item-059.png | QR: qrcodes/item-059.png | LISTA INFORMADA
+060 | Obra | Cota “um pedacinho do nosso teto” (telhas) | R$ 800,00 | imagem: imagens/item-060.png | QR: qrcodes/item-060.png | LISTA INFORMADA
+061 | Obra | Tinta - Cota “paredes com cara de casa” | R$ 800,00 | imagem: imagens/item-061.png | QR: qrcodes/item-061.png | LISTA INFORMADA
+062 | Obra | Cota “primeiros passos na casa nova” - revestimento | R$ 800,00 | imagem: imagens/item-062.png | QR: qrcodes/item-062.png | LISTA INFORMADA
+063 | Quartos e enxoval | Colcha Piquet Queen Teka | R$ 149,98 | imagem: imagens/item-063.png | QR: qrcodes/item-063.png | LISTA INFORMADA
+064 | Quartos e enxoval | Cota guarda-roupa do casal | R$ 150,00 | imagem: imagens/item-064.png | QR: qrcodes/item-064.png | LISTA INFORMADA
+065 | Quartos e enxoval | Jogo de lençol queen | R$ 160,00 | imagem: imagens/item-065.png | QR: qrcodes/item-065.png | LISTA INFORMADA
+066 | Quartos e enxoval | Edredom queen | R$ 255,90 | imagem: imagens/item-066.png | QR: qrcodes/item-066.png | LISTA INFORMADA
+067 | Quartos e enxoval | Jogo de toalhas | R$ 289,90 | imagem: imagens/item-067.png | QR: qrcodes/item-067.png | LISTA INFORMADA
+068 | Quartos e enxoval | Cota guarda-roupa do casal | R$ 300,00 | imagem: imagens/item-068.png | QR: qrcodes/item-068.png | LISTA INFORMADA
+069 | Quartos e enxoval | Cortina Blakout | R$ 345,54 | imagem: imagens/item-069.png | QR: qrcodes/item-069.png | LISTA INFORMADA
+070 | Quartos e enxoval | Cota cabeceira de cama queen | R$ 348,15 | imagem: imagens/item-070.png | QR: qrcodes/item-070.png | LISTA INFORMADA
+071 | Quartos e enxoval | Jogo de Cama Queen 200 fios | R$ 369,90 | imagem: imagens/item-071.png | QR: qrcodes/item-071.png | LISTA INFORMADA
+072 | Quartos e enxoval | Cota guarda-roupa do casal | R$ 500,00 | imagem: imagens/item-072.png | QR: qrcodes/item-072.png | LISTA INFORMADA
+073 | Quartos e enxoval | Cota guarda-roupa do casal | R$ 650,00 | imagem: imagens/item-073.png | QR: qrcodes/item-073.png | LISTA INFORMADA
+074 | Quartos e enxoval | Cota guarda-roupa do casal | R$ 800,00 | imagem: imagens/item-074.png | QR: qrcodes/item-074.png | LISTA INFORMADA
+075 | Sala e decoração | Almofadas decorativas | R$ 149,90 | imagem: imagens/item-075.png | QR: qrcodes/item-075.png | ADICIONADO PARA COMPLETAR 100
+076 | Sala e decoração | Manta para sofá | R$ 179,90 | imagem: imagens/item-076.png | QR: qrcodes/item-076.png | ADICIONADO PARA COMPLETAR 100
+077 | Sala e decoração | Tapete para sala | R$ 699,90 | imagem: imagens/item-077.png | QR: qrcodes/item-077.png | ADICIONADO PARA COMPLETAR 100
+078 | Sala e decoração | Espelho decorativo | R$ 349,90 | imagem: imagens/item-078.png | QR: qrcodes/item-078.png | ADICIONADO PARA COMPLETAR 100
+079 | Sala e decoração | Quadro para sala | R$ 189,90 | imagem: imagens/item-079.png | QR: qrcodes/item-079.png | ADICIONADO PARA COMPLETAR 100
+080 | Sala e decoração | Mesa lateral | R$ 329,90 | imagem: imagens/item-080.png | QR: qrcodes/item-080.png | ADICIONADO PARA COMPLETAR 100
+081 | Sala e decoração | Luminária de piso | R$ 459,90 | imagem: imagens/item-081.png | QR: qrcodes/item-081.png | ADICIONADO PARA COMPLETAR 100
+082 | Sala e decoração | Cota sofá da sala | R$ 300,00 | imagem: imagens/item-082.png | QR: qrcodes/item-082.png | ADICIONADO PARA COMPLETAR 100
+083 | Sala e decoração | Cota sofá da sala | R$ 500,00 | imagem: imagens/item-083.png | QR: qrcodes/item-083.png | ADICIONADO PARA COMPLETAR 100
+084 | Sala e decoração | Cota sofá da sala | R$ 800,00 | imagem: imagens/item-084.png | QR: qrcodes/item-084.png | ADICIONADO PARA COMPLETAR 100
+085 | Banheiro | Jogo de acessórios para banheiro | R$ 159,90 | imagem: imagens/item-085.png | QR: qrcodes/item-085.png | ADICIONADO PARA COMPLETAR 100
+086 | Banheiro | Espelho para banheiro | R$ 299,90 | imagem: imagens/item-086.png | QR: qrcodes/item-086.png | ADICIONADO PARA COMPLETAR 100
+087 | Banheiro | Kit de toalhas de banho | R$ 239,90 | imagem: imagens/item-087.png | QR: qrcodes/item-087.png | ADICIONADO PARA COMPLETAR 100
+088 | Cozinha | Jogo de potes herméticos | R$ 169,90 | imagem: imagens/item-088.png | QR: qrcodes/item-088.png | ADICIONADO PARA COMPLETAR 100
+089 | Cozinha | Tábua de corte em madeira | R$ 139,90 | imagem: imagens/item-089.png | QR: qrcodes/item-089.png | ADICIONADO PARA COMPLETAR 100
+090 | Cozinha | Assadeira antiaderente | R$ 179,90 | imagem: imagens/item-090.png | QR: qrcodes/item-090.png | ADICIONADO PARA COMPLETAR 100
+091 | Cozinha | Cafeteira elétrica | R$ 219,90 | imagem: imagens/item-091.png | QR: qrcodes/item-091.png | ADICIONADO PARA COMPLETAR 100
+092 | Cozinha | Chaleira elétrica | R$ 199,90 | imagem: imagens/item-092.png | QR: qrcodes/item-092.png | ADICIONADO PARA COMPLETAR 100
+093 | Área externa | Varal de chão | R$ 189,90 | imagem: imagens/item-093.png | QR: qrcodes/item-093.png | ADICIONADO PARA COMPLETAR 100
+094 | Área externa | Mangueira de jardim | R$ 169,90 | imagem: imagens/item-094.png | QR: qrcodes/item-094.png | ADICIONADO PARA COMPLETAR 100
+095 | Área externa | Vaso para área externa | R$ 249,90 | imagem: imagens/item-095.png | QR: qrcodes/item-095.png | ADICIONADO PARA COMPLETAR 100
+096 | Área externa | Banco para jardim | R$ 499,90 | imagem: imagens/item-096.png | QR: qrcodes/item-096.png | ADICIONADO PARA COMPLETAR 100
+097 | Quartos e enxoval | Par de travesseiros | R$ 189,90 | imagem: imagens/item-097.png | QR: qrcodes/item-097.png | ADICIONADO PARA COMPLETAR 100
+098 | Quartos e enxoval | Protetor de colchão queen | R$ 199,90 | imagem: imagens/item-098.png | QR: qrcodes/item-098.png | ADICIONADO PARA COMPLETAR 100
+099 | Quartos e enxoval | Abajures para o quarto | R$ 279,90 | imagem: imagens/item-099.png | QR: qrcodes/item-099.png | ADICIONADO PARA COMPLETAR 100
+100 | Organização | Kit de cabides | R$ 119,90 | imagem: imagens/item-100.png | QR: qrcodes/item-100.png | ADICIONADO PARA COMPLETAR 100
